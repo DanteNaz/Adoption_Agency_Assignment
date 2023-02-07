@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+    <h1> Home Page </h1>
+    
+    <br>
+
+    <ul>
+        <li><a href="/add_pet">Add New Pet</a></li>
+    </ul>
+    
+    <br>
+        
+<body>
+
+
+        {% for pet in display %}
+            <p>
+            <a href="/{{pet.id}}/details">{{pet.name}}</a>
+            </p>
+                {% if pet.available %}
+                <b> Available </b>
+                {% endif %}
+            <br>
+    {% if pet.photo_url%}        
+    <img src={{pet.photo_url}} >   
+    {% endif %}
+    
+    <br>
+    <br>
+    <br>
+    <p>________________________________________________________________________________________________________________________________</p>
+    {% endfor %}
+    
+
+</body>
+</html>
